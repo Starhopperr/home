@@ -1,13 +1,13 @@
 :root {
-  --primary: #89b4fa;
+  --primary: #ffffff;
   /* This is the primary color. */
-  --secondary: #a6e3a1;
+  --secondary: #00ff33;
   /* This is the secondary color. */
-  --bg: #1e1e2e;
+  --bg: #930000;
   /* This is the background color. */
-  --heading: #cdd6f4;
+  --heading: #000000;
   /* This is the color for headings. */
-  --text: #cdd6f4;
+  --text: #fff644;
   /* This is the color for text. */
 }
 
@@ -27,7 +27,7 @@ html {
 }
 
 .port_about,
-.port_ed,
+.port_glossary,
 .port_skills,
 .port_heading,
 .port_contact,
@@ -39,12 +39,9 @@ html {
 }
 
 .port_about::after,
-.port_skills::after,
-.port_ed::after,
+.port_glossary::after,
 .port_heading::after,
-.port_contact::after,
-.port_contri::after,
-.port_projects::after {
+.port_contact::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -58,12 +55,9 @@ html {
 }
 
 .port_about:hover::after,
-.port_skills:hover::after,
-.port_ed:hover::after,
+.port_glossary:hover::after,
 .port_heading:hover::after,
-.port_contact:hover::after,
-.port_contri:hover::after,
-.port_projects:hover::after {
+.port_contact:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
@@ -91,7 +85,7 @@ h2 {
 }
 
 h3 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   /* This sets the font size for h3 headings. */
 }
 
@@ -142,8 +136,7 @@ nav a {
 }
 
 .about_nav,
-.skills_nav,
-.projects_nav,
+.glossary_nav,
 .contact_nav {
   transition: box-shadow .3s;
 }
@@ -176,6 +169,35 @@ section {
   text-align: center;
 }
 
+
+a {
+  display: inline-block;
+  position: relative;
+  color: hotpink;
+  text-decoration: none;
+}
+
+a::after
+ {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: hotpink;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+a:hover::after
+ {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
 #about ul {
   /* The about page unordered list will be displayed in a flex container with justify-content of center, no list-style, and no padding. This means that the list items will be displayed one after the other, and there will be no bullets or spaces between them. */
   display: flex;
@@ -189,209 +211,6 @@ section {
   margin: 0 10px;
 }
 
-/* Skills */
-
-
-.fa-linux,
-.fa-python,
-.fa-figma,
-.fa-html5,
-.fa-css3-alt,
-.fa-react,
-.fa-js,
-.fa-node {
-  /* The skill icons will have a font size of clamp(2rem, 5vw, 5rem), a margin of 30px 10px, and a color of var(--primary). */
-  font-size: clamp(2rem, 5vw, 5rem);
-  color: var(--primary);
-  transition: color .5s ease-in;
-  transition: text-shadow .3s ease-in;
-  margin: 30px 10px;
-}
-
-.fa-linux:hover,
-.fa-python:hover,
-.fa-figma:hover,
-.fa-html5:hover,
-.fa-css3-alt:hover,
-.fa-react:hover,
-.fa-js:hover,
-.fa-node:hover {
-  color: var(--secondary);
-  text-shadow: 0 0 50px #a6e3a1;
-}
-
-/* This code defines the style for the education section. */
-
-#education {
-  /* The education section will have a max-width of 100% and will be centered on the page. */
-  max-width: 100%;
-  text-align: center;
-  align-items: center;
-
-  /* The margin attribute has been commented out because it is not necessary. */
-  /* margin: 0 auto; */
-}
-
-#education h2 {
-  /* The h2 headings in the education section will have a margin-bottom of 30px and will be displayed full-width. */
-  max-width: 100%;
-}
-
-#education h3 {
-  /* The h3 headings in the education section will have a margin-bottom of 10px and will be displayed full-width. */
-  max-width: 100%;
-}
-
-#education p {
-  /* The paragraphs in the education section will have a line-height of 1, will be displayed full-width, and will have a font size of 180%. */
-  line-height: 1;
-  max-width: 100%;
-  font-size: 180%;
-  color: #7f849c;
-}
-
-#education ul {
-  /* The unordered lists in the education section will have no list-style and will be displayed full-width. */
-  list-style: none;
-  max-width: 100%;
-
-  /* The padding-left attribute has been commented out because it is not necessary. */
-  /* padding-left: 0; */
-}
-
-#education li {
-  /* The list items in the education section will have a line-height of 1.8 and will be displayed full-width. */
-  line-height: 1;
-  max-width: 100%;
-}
-
-/* This media query defines the style for the education section when the screen width is less than 600px. */
-
-@media (max-width: 600px) {
-
-  /* The education section will have padding of 20px. */
-  #education {
-    padding: 20px;
-  }
-
-  /* The h2 headings in the education section will have a font size of 28px. */
-  #education h2 {
-    font-size: 28px;
-  }
-
-  /* The h3 headings in the education section will have a font size of 20px. */
-  #education h3 {
-    font-size: 20px;
-  }
-
-}
-
-/* This code defines the style for the projects section. */
-
-/* Projects Container */
-
-.projects {
-  /* The projects container will have overflow-x: auto, overflow-y: hidden, and white-space: nowrap. This will allow the projects to scroll horizontally if they are too wide to fit on the screen. */
-  overflow-x: auto;
-  overflow-y: hidden;
-  white-space: nowrap;
-
-  /* The projects container will be centered on the page and will have a max-width of 1000px. */
-  margin: 0 auto;
-  max-width: 1000px;
-
-  /* The projects container will have padding of 20px. */
-  padding: 20px;
-}
-
-.contributions {
-  /* The projects container will have overflow-x: auto, overflow-y: hidden, and white-space: nowrap. This will allow the projects to scroll horizontally if they are too wide to fit on the screen. */
-  overflow-x: auto;
-  overflow-y: hidden;
-  white-space: nowrap;
-
-  /* The projects container will be centered on the page and will have a max-width of 1000px. */
-  margin: 0 auto;
-  max-width: 1000px;
-
-  /* The projects container will have padding of 20px. */
-  padding: 20px;
-}
-
-/* Individual Projects */
-
-.project {
-  /* Each project will be displayed as an inline-block element with a width of 300px and a vertical alignment of top. It will also have a margin-right of 20px, a background color of #38355c, and rounded borders with a radius of 10px. */
-  display: inline-block;
-  width: 300px;
-  vertical-align: top;
-  margin-right: 20px;
-  background-color: #313244;
-  border-radius: 10px;
-  border: #45475a 3px solid;
-
-  /* The project will have padding of 20px between the content. */
-  padding: 20px;
-}
-
-/* Remove margin from last project */
-
-.project:last-child {
-  /* The last project will not have a margin-right of 20px. */
-  margin-right: 0;
-}
-
-/* Project Content Styling */
-
-.project h3 {
-  /* The h3 headings for each project will have a margin-top of 10px and a font size of 1.3rem. */
-  margin-top: 10px;
-  font-size: 1.3rem;
-}
-
-.project p {
-  /* The paragraphs for each project will have a color of #7f849c. */
-  color: #7f849c;
-}
-
-.contribution {
-  /* Each project will be displayed as an inline-block element with a width of 300px and a vertical alignment of top. It will also have a margin-right of 20px, a background color of #313244, and rounded borders with a radius of 10px. */
-  display: inline-block;
-  width: 300px;
-  vertical-align: top;
-  margin-right: 20px;
-  background-color: #313244;
-  border-radius: 10px;
-  border: #45475a 3px solid;
-
-  /* The project will have padding of 20px between the content. */
-  padding: 20px;
-}
-
-/* Remove margin from last project */
-
-.contribution:last-child {
-  /* The last project will not have a margin-right of 20px. */
-  margin-right: 0;
-}
-
-/* Project Content Styling */
-
-.contribution h3 {
-  /* The h3 headings for each project will have a margin-top of 10px and a font size of 1.3rem. */
-  margin-top: 10px;
-  font-size: 1.3rem;
-}
-
-.contribution p {
-  /* The paragraphs for each project will have a color of #7f849c. */
-  color: #7f849c;
-}
-
-
-
-/* This code defines the style for the contact section. */
-
 /* Contact */
 
 #contact p {
@@ -400,10 +219,20 @@ section {
   font-size: 1.4rem;
 }
 
+#contact h3 {
+  text-align: left;
+  align-self: flex-start;
+  width: 100%;
+  padding: 0;
+}
+
+
 #contact a {
   /* The links in the contact section will be aligned to the center and will have text-align: center. */
   align-items: center;
   text-align: center;
+  color: var(--secondary); 
+  text-decoration: none
 }
 
 #contact i {
@@ -416,6 +245,10 @@ section {
 .last-contact-item,
 .footer {
   padding-bottom: 20px;
+}
+#glossary p {
+  text-align: left;
+  align-self: flex-start;
 }
 
 /* Media Queries */
@@ -432,8 +265,4 @@ section {
     width: 180px;
     align-self: center;
   }
-
-
-
-
 }
