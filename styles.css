@@ -28,7 +28,6 @@ html {
 
 .port_about,
 .port_glossary,
-.port_skills,
 .port_heading,
 .port_contact,
 .port_contri,
@@ -142,8 +141,7 @@ nav a {
 }
 
 .about_nav:hover,
-.skills_nav:hover,
-.projects_nav:hover,
+.glossary_nav:hover,
 .contact_nav:hover {
   box-shadow: 0 0 100px #89b4fa85;
   background: var(--primary);
