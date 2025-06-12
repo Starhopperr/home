@@ -172,7 +172,7 @@ section {
 #about a {
   display: inline-block;
   position: relative;
-  color: hotpink;
+  color: #0080fe;
   text-decoration: none;
 }
 
@@ -185,7 +185,7 @@ section {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: hotpink;
+  background-color: #0080fe;
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
