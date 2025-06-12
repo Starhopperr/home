@@ -168,14 +168,14 @@ section {
 }
 
 
-a {
+#about a {
   display: inline-block;
   position: relative;
   color: hotpink;
   text-decoration: none;
 }
 
-a::after
+#about a::after
  {
   content: '';
   position: absolute;
@@ -189,7 +189,7 @@ a::after
   transition: transform 0.25s ease-out;
 }
 
-a:hover::after
+#about a:hover::after
  {
   transform: scaleX(1);
   transform-origin: bottom left;
